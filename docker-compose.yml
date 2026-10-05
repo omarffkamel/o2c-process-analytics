@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: o2c
+      POSTGRES_PASSWORD: o2c
+      POSTGRES_DB: o2c
+    ports: ["5433:5432"]
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./data:/data
+      - ./sql:/sql
+volumes:
+  pgdata:
